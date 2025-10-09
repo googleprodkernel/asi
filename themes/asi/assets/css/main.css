@@ -2,8 +2,11 @@ body {
   color: #222;
   font-family: sans-serif;
   line-height: 1.5;
-  margin: 1rem;
+  margin: 1rem auto;
   max-width: 768px;
+  min-height: calc(100vh - 2rem);
+  display: grid;
+  grid-template-rows: auto 1fr auto;
 }
 
 header {
@@ -19,4 +22,19 @@ footer {
 a {
   color: #00e;
   text-decoration: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #333;
+    color: #ddd;
+  }
+
+  header, footer {
+    border-color: #ddd;
+  }
+
+  a {
+    color: #88f;
+  }
 }
