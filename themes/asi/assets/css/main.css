@@ -44,3 +44,14 @@ a {
         background-color: rgba(255, 255, 255, 0.5);
     }
 }
+
+.callout {
+    padding: 0.5rem;
+    border: 1px solid #eee;
+    border-radius: 0.25rem;
+}
+
+blockquote {
+    border-left: 0.25rem solid #eee;
+    padding-left: 0.5rem;
+}
