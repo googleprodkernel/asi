@@ -38,4 +38,9 @@ a {
     a {
         color: #88f;
     }
+
+    /* Some images are transparent so they can be hard to read, give them a background */
+    img {
+        background-color: rgba(255, 255, 255, 0.5);
+    }
 }
