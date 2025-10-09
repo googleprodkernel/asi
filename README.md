@@ -4,7 +4,7 @@ Source code for ASI resources site.
 
 ## Develop
 
-- [Install Nix](https://nix.dev/install-nix#install-nix
+- [Install Nix](https://nix.dev/install-nix#install-nix)
 - Run `nix develop`
 - Run `hugo server`
 
