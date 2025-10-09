@@ -2,6 +2,10 @@
   inputs = {
     flake-utils.url = "github:numtide/flake-utils";
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-25.05";
+    # Does this fail for you? You need Nix 2.27:
+    # https://nix.dev/manual/nix/2.27/release-notes/rl-2.27.html
+    # Workaround: Install Nix with Nix (e.g. nix run nixpkgs#nix).
+    self.submodules = true;
   };
 
   outputs =
