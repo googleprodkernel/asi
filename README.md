@@ -1,6 +1,6 @@
 # Address Space Isolation for Linux - site source
 
-Source code for ASI resources site.
+Source code for ASI resources site, currently hosted at https://yawn.io/asi/.
 
 ## Develop
 

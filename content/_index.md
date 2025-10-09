@@ -11,6 +11,12 @@ servers.
 This site serves to hold info and resources that are useful for the effort to
 get this feature into the upstream kernel.
 
+{{< callout >}}
+**Note**: This site is likely to move as the gears of Google bureaucracy turn. If you need
+a stable URL to cite to any of these resources, contact Brendan Jackman via the
+email address you can see on his LKML posts.
+{{< /callout >}}
+
 ## ASI in a Nutshell
 
 {{< callout >}}
@@ -61,6 +67,9 @@ Attempts began in earnest to merge code upstream in [Sept
 
 ### Presentations
 
+The next presentation will be at [LPC 2025](https://lpc.events/event/19/program)
+at the x86 microconference.
+
 Most recent first:
 
 - [Slides](https://docs.google.com/presentation/u/1/d/1waibhMBXhfJ2qVEz8KtXop9MZ6UyjlWmK71i0WIH7CY/edit?slide=id.p#slide=id.p)
@@ -72,6 +81,11 @@ Most recent first:
   session included a basic conceptual intro to ASI**.
 
 ### Code & LKML discussions
+
+The most up-to-date ASI code is the [`asi/next` branch on Brendan Jackman's
+Github repository](https://github.com/bjackman/linux/tree/asi/next). This is
+currently (Oct 2025) in a very messy state, it will be updated in coming weeks
+with more info added to this site.
 
 Most recent first:
 
@@ -120,3 +134,7 @@ Most recent first:
   This is Google's first public posting of ASI. (Note, this was not the first
   implementation of this feature, see the references of that post for more
   history).
+
+## This site
+
+The code of this website is [here](https://github.com/bjackman/asi).
