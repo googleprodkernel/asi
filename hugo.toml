@@ -1,4 +1,4 @@
-baseURL = 'https://bjackman.github.io/asi/'
+baseURL = 'https://linuxasi.dev'
 languageCode = 'en-us'
 title = 'Address Space Isolation for Linux'
 theme = 'asi'
