@@ -1,3 +1,6 @@
 <div class="callout">
-    {{ .Inner | .Page.RenderString }}
+    {{/* The args to RenderString ensure the content is always rendered using <p>
+          elements, even if there is only one paragraph in the markdown source.
+          This helps keep the styling simple. */}}
+    {{ .Inner | .Page.RenderString (dict "display" "block") }}
 </div>
