@@ -134,7 +134,3 @@ Most recent first:
   This is Google's first public posting of ASI. (Note, this was not the first
   implementation of this feature, see the references of that post for more
   history).
-
-## This site
-
-The code of this website is [here](https://github.com/bjackman/asi).
