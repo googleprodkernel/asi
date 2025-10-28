@@ -34,3 +34,9 @@ hello
 The rendering of this is defined via
 `themes/asi/layouts/shortcodes/callout.html`. It can be made more complicated if
 needed.
+
+## TODOs
+
+- Describe why ASI is useful
+- Describe performance targets
+- Add some discussion of strategic questions like "allowlist"/"denylist".
