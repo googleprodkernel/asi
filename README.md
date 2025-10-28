@@ -6,7 +6,7 @@ Source code for ASI resources site, hosted at https://linuxasi.dev.
 
 - [Install Nix](https://nix.dev/install-nix#install-nix)
 - Run `nix develop`
-- Run `hugo server`
+- Run `hugo server`. If running on a remote server, add `--bind=0.0.0.0 --baseURL=http://your.server.org`
 
 Open the link. The result should auto-reload when you change the code.
 
