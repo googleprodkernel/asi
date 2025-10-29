@@ -22,7 +22,7 @@ If you prefer a more detailed exegesis, see the [resources section](#resources).
 More recent iterations include documentation patches that might be illustrative.
 {{< /callout >}}
 
-The basic idea of ASI is to introduce a new kernel address sapce that doesn't
+The basic idea of ASI is to introduce a new kernel address space that doesn't
 contain any user data (userspace process memory or KVM guest memory). This new
 address space is called the **nonsensitive** address space; other than having
 user data unmapped it's exactly the same as the normal kernel address space,
@@ -56,8 +56,8 @@ instantaneous mitigation actions such as:
 
 ![ASI high-level flow](asi_high_level_flow.svg)
 
-By restricting those actions to the instants where truly needed, ASI amortizes
-their cost and thus enable robust mitigations that would otherwise be too
+By restricting those actions to the instants where truly needed, ASI amortises
+their cost and thus enables robust mitigations that would otherwise be too
 expensive.
 
 ![ASI avoids mitigation costs](asi_no_cost.svg)
@@ -112,7 +112,7 @@ Most recent first:
   This is the first `[PATCH]` posting, i.e. the first code that's been presented
   as more than a prototype or proof-of-concept.
 
-  This was an attempt to introduce basic pagetable management without the actual
+  This was an attempt to introduce basic page table management without the actual
   address-space-switching logic. Feedback from Dave Hansen suggests this is the
   wrong approach to getting ASI merged:
 
