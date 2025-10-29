@@ -90,6 +90,7 @@ at the x86 microconference.
 
 Most recent first:
 
+- [Slides](https://docs.google.com/presentation/d/1oKvJs_4Z0m0tWwHJrD2IraktKcRJwKWMkEYwwYu0T_k/edit) from Linux MM Alignment Session October 2025.
 - [Slides](https://docs.google.com/presentation/u/1/d/1waibhMBXhfJ2qVEz8KtXop9MZ6UyjlWmK71i0WIH7CY/edit?slide=id.p#slide=id.p)
   & [LWN coverage](https://lwn.net/Articles/1016013/) from LSF/MM/BPF 2025.
 - [Slides](https://lpc.events/event/18/contributions/1761/attachments/1549/3230/ASI%20LPC2024.pdf)
