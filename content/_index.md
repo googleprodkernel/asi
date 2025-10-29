@@ -11,12 +11,6 @@ servers.
 This site serves to hold info and resources that are useful for the effort to
 get this feature into the upstream kernel.
 
-{{< callout >}}
-**Note**: This site is likely to move as the gears of Google bureaucracy turn. If you need
-a stable URL to cite to any of these resources, contact Brendan Jackman via the
-email address you can see on his LKML posts.
-{{< /callout >}}
-
 ## ASI in a Nutshell
 
 {{< callout >}}
