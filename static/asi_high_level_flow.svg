@@ -13,11 +13,11 @@
 
   <rect x="37.5" y="98.5" width="154" height="37" rx="9" fill="#f4cccc" stroke="#999999" stroke-width="1" />
   <text x="114.5" y="117.5" class="text" fill="#000000"
-        text-anchor="middle" dominant-baseline="middle">Unrestricted</text>
+        text-anchor="middle" dominant-baseline="middle">Sensitive</text>
 
   <rect x="395.5" y="98.5" width="154" height="37" rx="9" fill="#d9ead3" stroke="#999999" stroke-width="1" />
   <text x="472.5" y="117.5" class="text" fill="#000000"
-        text-anchor="middle" dominant-baseline="middle">Restricted</text>
+        text-anchor="middle" dominant-baseline="middle">Nonsensitive</text>
 
   <path d="M195.5,117.5 C250,80,350,80,395.5,117.5" fill="none" stroke="#666666"
         stroke-width="2" marker-end="url(#arrowhead)" />

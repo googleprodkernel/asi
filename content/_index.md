@@ -22,17 +22,31 @@ If you prefer a more detailed exegesis, see the [resources section](#resources).
 More recent iterations include documentation patches that might be illustrative.
 {{< /callout >}}
 
-The principle is to unmap areas of memory that might contain secrets (i.e. any
-data that comes from userspace or a VM guest), even when running kernel code,
-until they are needed. They are mapped in on-demand as detected by a page fault.
+The basic idea of ASI is to introduce a new kernel address sapce that doesn't
+contain any user data (userspace process memory or KVM guest memory). This new
+address space is called the **nonsensitive** address space; other than having
+user data unmapped it's exactly the same as the normal kernel address space,
+which is called the **sensitive** address space.
 
-Accessing an unmapped secret triggers a page fault, whose handler writes to CR3;
-this is a serializing instruction, so it prevents speculative access to
-sensitive data.
+{{< callout >}}
+**Note**: Earlier ASI resources used the term "restricted" and "unrestricted" to
+describe the nonsensitive and sensitive address spaces respectively.
+{{< /callout >}}
+
+As much as possible, the kernel runs in the nonsensitive address space. Since
+speculative execution can't access unmapped data, all data is fully protected
+from transient execution attacks during this time. When the kernel _does_ need
+to access user data, this access triggers a page fault. In the page fault
+handler, the kernel switches to the sensitive address space and then continues,
+so that the faulting memory access is retried and succeeds and execution
+continues. This fault-driven approach means ASI is transparent to most of the
+kernel; only very low-level code needs to be aware of the two separate address
+spaces.
 
 ![ASI in a nutshell](asi_nutshell.svg)
 
-Transitions between unrestricted and restricted states provide new hook-points for instantaneous mitigation actions such as:
+Transitions between sensitive and nonsitive states provide new hook-points for
+instantaneous mitigation actions such as:
 
 - Flushing microarchitectural data buffers to block side-channels,
 - Flushing control-flow buffers (such as branch predictors) to block
@@ -42,11 +56,21 @@ Transitions between unrestricted and restricted states provide new hook-points f
 
 ![ASI high-level flow](asi_high_level_flow.svg)
 
-By restricting those actions to the instants where truly needed, ASI hopes to
-amortize their cost and thus enable robust mitigations that would otherwise be
-too expensive.
+By restricting those actions to the instants where truly needed, ASI amortizes
+their cost and thus enable robust mitigations that would otherwise be too
+expensive.
 
 ![ASI avoids mitigation costs](asi_no_cost.svg)
+
+When it's working well, ASI is faster than Linux's existing mitigations, while
+being much more general and flexible. For example, while Google saw CPU
+overheads on the order of 5% when evaluating upstream mitigations for
+[SRSO](https://docs.kernel.org/admin-guide/hw-vuln/srso.html), ASI's overheads
+almost always stay below 1% of whatever endpoint is being measured.
+
+This website will be updated with more detailed performance information as time
+goes on. Please contact Brendan Jackman via the address you'll find on LKML if
+you have specific questions or workloads you're interested in evaluating.
 
 ## Status (Oct 2025)
 
