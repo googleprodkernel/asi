@@ -153,3 +153,30 @@ Most recent first:
   This is Google's first public posting of ASI. (Note, this was not the first
   implementation of this feature, see the references of that post for more
   history).
+
+### Other interesting links
+
+- [Mike Rapoport's `unmapped_alloc()`
+  branch](https://git.kernel.org/pub/scm/linux/kernel/git/rppt/linux.git/log/?h=unmapped-alloc/rfc-v2).
+
+  This endeavour had some overlaps with ASI in that it added support to allocate
+  pages that are missing from the direct map.
+
+- Sep 2025: [`[PATCH v7 00/12] Direct Map Removal Support for
+  guest_memfd`](https://lore.kernel.org/all/20250924151101.2225820-1-patrick.roy@campus.lmu.de)
+  by Patrick Roy.
+
+  This is a feature to allow KVM guest memory that is allocated via
+  `guest_memfd` to be completely removed from the direct map. This solves a set
+  of problems that overlaps with the ones solved by ASI:
+
+   - It immediately prevents a large class of CPU exploits, or at least requires
+     them to be re-engineered/more complicated.
+
+   - It _also_ appears to be helpful for preventing exploits of software bugs,
+     which ASI is certainly not (ASI is completely transparent to architectural
+     execution).
+
+   - However, it requires coordination across the entire platform stack to be
+     useful: it only protects KVM guest memory, and only with a compatible
+     hypervisor stack.
