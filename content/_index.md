@@ -103,8 +103,8 @@ Most recent first:
 
 The most up-to-date ASI code is the [`asi/next` branch on Brendan Jackman's
 Github repository](https://github.com/bjackman/linux/tree/asi/next). This is
-currently (Oct 2025) in a very messy state, it will be updated in coming weeks
-with more info added to this site.
+currently (Feb 2026) in a very messy state, keeping it updated has proved
+challenging.
 
 Most recent first:
 
