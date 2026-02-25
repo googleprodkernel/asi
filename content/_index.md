@@ -90,7 +90,7 @@ at the x86 microconference.
 
 Most recent first:
 
-- [Slides](https://lpc.events/event/19/contributions/2029/attachments/1941/4144/Let%E2%80%99s%20merge%20ASI%20(LPC%202025).pdf) & [recording](https://www.youtube.com/watch?v=PMaMkAw5R-Q) from LPC 2025.
+- [Slides](<https://lpc.events/event/19/contributions/2029/attachments/1941/4144/Let%E2%80%99s%20merge%20ASI%20(LPC%202025).pdf>) & [recording](https://www.youtube.com/watch?v=PMaMkAw5R-Q) from LPC 2025.
 - [Slides](https://docs.google.com/presentation/d/1oKvJs_4Z0m0tWwHJrD2IraktKcRJwKWMkEYwwYu0T_k/edit) from Linux MM Alignment Session October 2025.
 - [Slides](https://docs.google.com/presentation/u/1/d/1waibhMBXhfJ2qVEz8KtXop9MZ6UyjlWmK71i0WIH7CY/edit?slide=id.p#slide=id.p)
   & [LWN coverage](https://lwn.net/Articles/1016013/) from LSF/MM/BPF 2025.
@@ -135,8 +135,7 @@ Most recent first:
   > practical and useful for end users. It can't be purely infrastructure or
   > preparatory.
 
-- Aug 2025: [`[Discuss] First steps for ASI (ASI is fast
-  again)`](https://lore.kernel.org/all/20250812173109.295750-1-jackmanb@google.com/)
+- Aug 2025: [`[Discuss] First steps for ASI (ASI is fast again)`](https://lore.kernel.org/all/20250812173109.295750-1-jackmanb@google.com/)
 
   This introduces a proof-of-concept for how to solve performance issues with
   the page cache. It attempts to generate a consensus on whether the kernel
@@ -145,23 +144,20 @@ Most recent first:
   Discussion centers on implementation of that solution. Lorenzo Stoakes
   suggests "we should just get going with some iterative series".
 
-- Jan 2025: [`[PATCH RFC v2 00/29] Address Space Isolation
-  (ASI)`](https://lore.kernel.org/linux-mm/20250110-asi-rfc-v2-v2-0-8419288bc805@google.com/)
+- Jan 2025: [`[PATCH RFC v2 00/29] Address Space Isolation (ASI)`](https://lore.kernel.org/linux-mm/20250110-asi-rfc-v2-v2-0-8419288bc805@google.com/)
 
   A general proof-of-concept patchset introducing a minimal implementation of
   ASI. Compared to previous iterations, the key addition is support for
   protection against native processes (not only VM guests).
 
-- July 2024: [`[PATCH 00/26] Address Space Isolation (ASI)
-  2024`](https://lore.kernel.org/linux-mm/20240712-asi-rfc-24-v1-0-144b319a40d8@google.com/)
+- July 2024: [`[PATCH 00/26] Address Space Isolation (ASI) 2024`](https://lore.kernel.org/linux-mm/20240712-asi-rfc-24-v1-0-144b319a40d8@google.com/)
 
   Compared to previous patchsets, this is just a simplification, attempting to
   make technical discussion more practical by shrinking the scope.
 
   There is some discussion of implementation details.
 
-- Feb 2022: [`[RFC PATCH 00/47] Address Space Isolation for
-  KVM`](https://lore.kernel.org/all/20220223052223.1202152-1-junaids@google.com/)
+- Feb 2022: [`[RFC PATCH 00/47] Address Space Isolation for KVM`](https://lore.kernel.org/all/20220223052223.1202152-1-junaids@google.com/)
 
   This is Google's first public posting of ASI. (Note, this was not the first
   implementation of this feature, see the references of that post for more
@@ -175,21 +171,20 @@ Most recent first:
   This endeavour had some overlaps with ASI in that it added support to allocate
   pages that are missing from the direct map.
 
-- Jan 2026: [`[PATCH v10 00/15] Direct Map Removal Support for
-  guest_memfd`](https://lore.kernel.org/all/20260126164445.11867-1-kalyazin@amazon.com/)
+- Jan 2026: [`[PATCH v10 00/15] Direct Map Removal Support for guest_memfd`](https://lore.kernel.org/all/20260126164445.11867-1-kalyazin@amazon.com/)
   by Nikita Kalyazin (formerly by Patrick Roy).
 
   This is a feature to allow KVM guest memory that is allocated via
   `guest_memfd` to be completely removed from the direct map. This solves a set
   of problems that overlaps with the ones solved by ASI:
 
-   - It immediately prevents a large class of CPU exploits, or at least requires
-     them to be re-engineered/more complicated.
+  - It immediately prevents a large class of CPU exploits, or at least requires
+    them to be re-engineered/more complicated.
 
-   - It _also_ appears to be helpful for preventing exploits of software bugs,
-     which ASI is certainly not (ASI is completely transparent to architectural
-     execution).
+  - It _also_ appears to be helpful for preventing exploits of software bugs,
+    which ASI is certainly not (ASI is completely transparent to architectural
+    execution).
 
-   - However, it requires coordination across the entire platform stack to be
-     useful: it only protects KVM guest memory, and only with a compatible
-     hypervisor stack.
+  - However, it requires coordination across the entire platform stack to be
+    useful: it only protects KVM guest memory, and only with a compatible
+    hypervisor stack.

@@ -2,6 +2,10 @@
   inputs = {
     flake-utils.url = "github:numtide/flake-utils";
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-25.11";
+    treefmt-nix = {
+      url = "github:numtide/treefmt-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     # Does this fail for you? You need Nix 2.27:
     # https://nix.dev/manual/nix/2.27/release-notes/rl-2.27.html
     # Workaround: Install Nix with Nix (e.g. nix run nixpkgs#nix).
@@ -13,6 +17,7 @@
       self,
       nixpkgs,
       flake-utils,
+      treefmt-nix,
     }:
     flake-utils.lib.eachDefaultSystem (
       system:
@@ -20,7 +25,16 @@
         pkgs = import nixpkgs { inherit system; };
       in
       {
-        formatter = pkgs.nixfmt-tree;
+        formatter =
+          let
+            cfg = treefmt-nix.lib.evalModule pkgs {
+              projectRootFile = "flake.nix";
+              programs.nixfmt.enable = true;
+              programs.mdformat.enable = true;
+            };
+          in
+          cfg.config.build.wrapper;
+
         packages = rec {
           site =
             pkgs.runCommand "site"
