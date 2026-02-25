@@ -90,7 +90,7 @@ at the x86 microconference.
 
 Most recent first:
 
-- [Slides](https://lpc.events/event/19/contributions/2029/attachments/1941/4144/Let%E2%80%99s%20merge%20ASI%20(LPC%202025).pdf) from LPC 2025.
+- [Slides](https://lpc.events/event/19/contributions/2029/attachments/1941/4144/Let%E2%80%99s%20merge%20ASI%20(LPC%202025).pdf) & [recording](https://www.youtube.com/watch?v=PMaMkAw5R-Q) from LPC 2025.
 - [Slides](https://docs.google.com/presentation/d/1oKvJs_4Z0m0tWwHJrD2IraktKcRJwKWMkEYwwYu0T_k/edit) from Linux MM Alignment Session October 2025.
 - [Slides](https://docs.google.com/presentation/u/1/d/1waibhMBXhfJ2qVEz8KtXop9MZ6UyjlWmK71i0WIH7CY/edit?slide=id.p#slide=id.p)
   & [LWN coverage](https://lwn.net/Articles/1016013/) from LSF/MM/BPF 2025.
