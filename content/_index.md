@@ -118,7 +118,7 @@ Most recent first:
   problems solved by ASI. This series is an attempt to decouple the parts of the
   series that solve those problems, in a way that is useful for `guest_memfd`.
   The [`guest_memfd` code that would benefit from
-  this](](https://lore.kernel.org/all/20260126164445.11867-1-kalyazin@amazon.com/))
+  this](https://lore.kernel.org/all/20260126164445.11867-1-kalyazin@amazon.com/)
   is not yet merged but is looking like it should be ready soon.
 
 - Sept 2025: [`[PATCH 00/21] mm: ASI direct map management`](https://lore.kernel.org/all/20250924-b4-asi-page-alloc-v1-0-2d861768041f@google.com/T/#t)
