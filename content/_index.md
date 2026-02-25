@@ -90,6 +90,7 @@ at the x86 microconference.
 
 Most recent first:
 
+- [Slides](https://lpc.events/event/19/contributions/2029/attachments/1941/4144/Let%E2%80%99s%20merge%20ASI%20(LPC%202025).pdf) from LPC 2025.
 - [Slides](https://docs.google.com/presentation/d/1oKvJs_4Z0m0tWwHJrD2IraktKcRJwKWMkEYwwYu0T_k/edit) from Linux MM Alignment Session October 2025.
 - [Slides](https://docs.google.com/presentation/u/1/d/1waibhMBXhfJ2qVEz8KtXop9MZ6UyjlWmK71i0WIH7CY/edit?slide=id.p#slide=id.p)
   & [LWN coverage](https://lwn.net/Articles/1016013/) from LSF/MM/BPF 2025.
@@ -107,6 +108,18 @@ currently (Feb 2026) in a very messy state, keeping it updated has proved
 challenging.
 
 Most recent first:
+
+- Feb 2026: `[PATCH RFC 00/19] mm: Add __GFP_UNMAPPED`
+
+  The series below led to feedback that we need to find a way to incrementally
+  merge ASI code that delivers value independently. David Hildenbrand pointed
+  out that the Firecracker team's efforts to remove memory from the direct map
+  was running into TLB-related performance issues which seem very similar to the
+  problems solved by ASI. This series is an attempt to decouple the parts of the
+  series that solve those problems, in a way that is useful for `guest_memfd`.
+  The [`guest_memfd` code that would benefit from
+  this](](https://lore.kernel.org/all/20260126164445.11867-1-kalyazin@amazon.com/))
+  is not yet merged but is looking like it should be ready soon.
 
 - Sept 2025: [`[PATCH 00/21] mm: ASI direct map management`](https://lore.kernel.org/all/20250924-b4-asi-page-alloc-v1-0-2d861768041f@google.com/T/#t)
 
@@ -162,9 +175,9 @@ Most recent first:
   This endeavour had some overlaps with ASI in that it added support to allocate
   pages that are missing from the direct map.
 
-- Sep 2025: [`[PATCH v7 00/12] Direct Map Removal Support for
-  guest_memfd`](https://lore.kernel.org/all/20250924151101.2225820-1-patrick.roy@campus.lmu.de)
-  by Patrick Roy.
+- Jan 2026: [`[PATCH v10 00/15] Direct Map Removal Support for
+  guest_memfd`](https://lore.kernel.org/all/20260126164445.11867-1-kalyazin@amazon.com/)
+  by Nikita Kalyazin (formerly by Patrick Roy).
 
   This is a feature to allow KVM guest memory that is allocated via
   `guest_memfd` to be completely removed from the direct map. This solves a set
