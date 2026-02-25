@@ -109,7 +109,7 @@ challenging.
 
 Most recent first:
 
-- Feb 2026: `[PATCH RFC 00/19] mm: Add __GFP_UNMAPPED`
+- Feb 2026: [`[PATCH RFC 00/19] mm: Add __GFP_UNMAPPED`](https://lore.kernel.org/all/20260225-page_alloc-unmapped-v1-0-e8808a03cd66@google.com/)
 
   The series below led to feedback that we need to find a way to incrementally
   merge ASI code that delivers value independently. David Hildenbrand pointed
