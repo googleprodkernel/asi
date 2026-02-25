@@ -1,0 +1,31 @@
+{
+  // I have not read this I just asked AI to make markdownlint-cli2 compatible
+  // with mdformat.
+  "config": {
+    // MD003: mdformat always uses ATX style headings (e.g., ## Heading)
+    "MD003": { "style": "atx" },
+
+    // MD004: mdformat defaults to dashes (-) for unordered lists
+    "MD004": { "style": "dash" },
+
+    // MD007: mdformat uses 2-space indentation for unordered lists
+    "MD007": { "indent": 2 },
+
+    // MD013: mdformat does not wrap lines by default (Semantic Line Breaks)
+    "MD013": false,
+
+    // MD029: mdformat uses "1." for all ordered list items to minimize diffs
+    "MD029": { "style": "one" },
+
+    // MD046: mdformat reformats indented code blocks into fenced code blocks
+    "MD046": { "style": "fenced" },
+
+    // MD049/MD050: mdformat uses underscores (_) for italics and asterisks (**) for bold
+    "MD049": { "style": "underscore" },
+    "MD050": { "style": "asterisk" },
+
+    // (Not AI from here on)
+    // Allow bare URLS
+    "MD034": false,
+  }
+}

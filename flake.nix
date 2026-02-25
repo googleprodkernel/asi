@@ -57,8 +57,18 @@
         };
 
         devShells.default = pkgs.mkShell {
-          packages = [ pkgs.hugo ];
+          packages = with pkgs; [ hugo markdownlint-cli2 ];
         };
+
+        checks.markdown-lint =
+          pkgs.runCommand "markdown-lint"
+            {
+              buildInputs = [ pkgs.markdownlint-cli2 ];
+            }
+            ''
+              markdownlint-cli2 "${self}/**/*.md"
+              touch $out
+            '';
       }
     );
 }
